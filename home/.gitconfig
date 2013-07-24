@@ -1,0 +1,39 @@
+[user]
+	name = Sajnikanth Suriyanarayanan
+	email = sajnikanth@gmail.com
+[core]
+	excludesfile = /Users/sajnikanth/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+[alias]
+	lg = log --graph --pretty=oneline --abbrev-commit --decorate
+	co = checkout
+	st = status -sb
+	ds = diff --staged
+	tr = ls-tree --full-tree -r HEAD
+	standup = log --since '1 day ago' --oneline --author sajnikanth
+
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpserverport = 587
+	smtpencryption = tls
+	smtpuser = sajnikanth@gmail.com
+
+[gitflow "branch"]
+	master = master
+	develop = develop
+[gitflow "prefix"]
+	feature = mhn-
+	release = release-
+	hotfix = hotfix-
+	support = support-
+	versiontag = v
