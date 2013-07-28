@@ -18,7 +18,7 @@
 	ui = auto
 [alias]
 	diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
-	st = status
+	st = status -sb
 	ci = commit
 	br = branch
 	co = checkout
@@ -42,3 +42,5 @@
 	hotfix = hotfix-
 	support = support-
 	versiontag = v
+[push]
+	default = simple
