@@ -1,33 +1,38 @@
 [user]
 	name = Sajnikanth Suriyanarayanan
 	email = sajnikanth@gmail.com
-[core]
-	excludesfile = /Users/sajnikanth/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-
-[alias]
-	lg = log --graph --pretty=oneline --abbrev-commit --decorate
-	co = checkout
-	st = status -sb
-	ds = diff --staged
-	tr = ls-tree --full-tree -r HEAD
-	standup = log --since '1 day ago' --oneline --author sajnikanth
-
 [sendemail]
 	smtpserver = smtp.gmail.com
 	smtpserverport = 587
 	smtpencryption = tls
 	smtpuser = sajnikanth@gmail.com
-
+[core]
+	excludesfile = /Users/sajnikanth/.gitignore_global
+	editor = vim
+	pager = less -R
+	whitespace = cr-at-eol
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+[alias]
+	diverges = !bash -c 'diff -u <(git rev-list --first-parent "${1}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	ds = diff --staged
+	lg = log --graph --pretty=oneline --abbrev-commit --all --decorate
+	tr = ls-tree --full-tree -r HEAD
+	up = !sh -c 'git pull --rebase --prune && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+	backout = reset --hard HEAD
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+	cleanstage = !bash -c 'git diff -w --no-color | git apply --cached'
+	cleanadd = !bash -c 'git diff -w --no-color \"$@\" | git apply --cached' -
 [gitflow "branch"]
 	master = master
 	develop = develop
