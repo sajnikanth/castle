@@ -42,5 +42,3 @@
 	hotfix = hotfix-
 	support = support-
 	versiontag = v
-[push]
-	default = simple
