@@ -21,6 +21,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias cl='clear && ll'
 alias c='clear'
+alias bigf='find ./ -type f -ls | sort -k 7 -r -n | head -5'
+alias bigd='find ./ -type d -ls | sort -k 7 -r -n | head -5'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
