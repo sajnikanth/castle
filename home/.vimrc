@@ -323,4 +323,4 @@ autocmd BufReadPost * call Kees_settabs()
 " This highlights the background in a subtle red for text that goes over the
 " 80 column limit
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%121v.\+/

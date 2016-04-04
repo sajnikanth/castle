@@ -21,6 +21,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias cl='clear && ll'
 alias c='clear'
+alias ack='ack-grep'
 alias bigf='find ./ -type f -ls | sort -k 7 -r -n | head -5'
 alias bigd='find ./ -type d -ls | sort -k 7 -r -n | head -5'
 
@@ -124,7 +125,9 @@ NewLine="\n"
 Jobs="\j"
 
 
-# This PS1 snippet was adopted from code for MAC/BSD I saw from: http://allancraig.net/index.php?option=com_content&view=article&id=108:ps1-export-command-for-git&catid=45:general&Itemid=96
+# This PS1 snippet was adopted from code for MAC/BSD I saw from:
+# http://allancraig.net/index.php?option=com_content&view=article&id=dd108:
+# ps1-export-command-for-git&catid=45:general&Itemid=96
 # I tweaked it to work on UBUNTU 11.04 & 11.10 plus made it mo' better
 
 
